@@ -30,3 +30,31 @@ export type CategoryType = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type ProductWithCategoryType = ProductType & {
+  category: CategoryType;
+};
+
+export type Size = {
+  id: string;
+  storeId: string;
+  name: string;
+  value: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type Color = {
+  id: string;
+  storeId: string;
+  name: string;
+  value: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type DetailProductType = ProductType & {
+  category: CategoryType;
+  size: Size;
+  color: Color;
+};

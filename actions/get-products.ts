@@ -1,6 +1,6 @@
 const url = process.env.BACKEND_URL;
 
-const getProducts = async (query?: string) => {
+const getProducts = async (query: string) => {
   try {
     console.log(`${url}/products?${query}`);
     const res = await fetch(`${url}/products?${query}`, {

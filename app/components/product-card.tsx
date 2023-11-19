@@ -1,13 +1,19 @@
+"use client";
+import { formatCurrency } from "@/lib/utlis";
+import { ProductWithCategoryType } from "@/types";
 import { ShoppingCart, View } from "lucide-react";
 import Image from "next/image";
-const imgUrl =
-  "https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-const ProductCard = () => {
+import { useRouter } from "next/navigation";
+const ProductCard = ({ data }: { data: ProductWithCategoryType }) => {
+  const router = useRouter();
   return (
-    <div className=" border-2 p-[5px] rounded space-y-3 shadow product-card">
+    <div
+      onClick={() => router.push(`/product/${data.id}`)}
+      className=" border-2 p-[5px] cursor-pointer rounded space-y-3 shadow product-card"
+    >
       <div className="relative w-[100%] h-[200px]">
         <Image
-          src={imgUrl}
+          src={data.images[0]}
           alt="product image"
           fill
           className="object-cover  rounded"
@@ -22,10 +28,10 @@ const ProductCard = () => {
         </div>
       </div>
       <div>
-        <p className="font-bold">Blue Shirt</p>
-        <p className="opacity-80">Suits</p>
+        <p className="font-bold">{data.name}</p>
+        <p className="opacity-80"> {data.category.name}</p>
       </div>
-      <p className="font-bold">$ 20.00</p>
+      <p className="font-bold">{formatCurrency(data.price)}</p>
     </div>
   );
 };
