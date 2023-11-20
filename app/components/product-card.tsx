@@ -1,11 +1,14 @@
 "use client";
 import { formatCurrency } from "@/lib/utlis";
-import { ProductWithCategoryType } from "@/types";
+import { DetailProductType, ProductWithCategoryType } from "@/types";
 import { ShoppingCart, View } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-const ProductCard = ({ data }: { data: ProductWithCategoryType }) => {
+import PreviewDialog from "./preview-dialog";
+import { useState } from "react";
+const ProductCard = ({ data }: { data: DetailProductType }) => {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
   return (
     <div
       onClick={() => router.push(`/product/${data.id}`)}
@@ -19,7 +22,13 @@ const ProductCard = ({ data }: { data: ProductWithCategoryType }) => {
           className="object-cover  rounded"
         />
         <div className="absolute hidden card-btns bottom-3 right-0   w-full ">
-          <button className="text-black w-[40px] h-[40px] rounded-full grid place-items-center bg-gray-50 bg-opacity-60 ">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setOpen(true);
+            }}
+            className="text-black w-[40px] h-[40px] rounded-full grid place-items-center bg-gray-50 bg-opacity-60 "
+          >
             <View />
           </button>
           <button className="text-black w-[40px] h-[40px] rounded-full grid place-items-center bg-gray-50 bg-opacity-60">
@@ -32,6 +41,8 @@ const ProductCard = ({ data }: { data: ProductWithCategoryType }) => {
         <p className="opacity-80"> {data.category.name}</p>
       </div>
       <p className="font-bold">{formatCurrency(data.price)}</p>
+
+      <PreviewDialog open={open} setOpen={setOpen} product={data} />
     </div>
   );
 };

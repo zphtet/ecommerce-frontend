@@ -6,9 +6,11 @@ import { Fragment } from "react";
 const Gallery = ({
   images,
   productName,
+  preview,
 }: {
   images: string[];
   productName: string;
+  preview?: boolean;
 }) => {
   return (
     <Tab.Group>
@@ -17,7 +19,9 @@ const Gallery = ({
           return (
             <Tab.Panel
               key={imgUrl}
-              className={`relative sm:h-[min(50vh,400px)] h-[min(40vh,300px)]`}
+              className={`relative sm:h-[min(50vh,400px)] h-[min(40vh,300px)] ${
+                preview && "sm:h-[min(30vh,300px)] h-[min(30vh,300px)] "
+              }`}
             >
               <Image
                 src={imgUrl}

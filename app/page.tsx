@@ -10,7 +10,7 @@ export default async function Home() {
       <Suspense fallback={<div>Loading featured products ....</div>}>
         <Products
           title="Featured Products"
-          query="featured=true&category=true"
+          query="featured=true&category=true&color=true&size=true"
         />
       </Suspense>
     </div>

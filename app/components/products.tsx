@@ -1,10 +1,10 @@
 import getProducts from "@/actions/get-products";
 import ProductCard from "./product-card";
-import { ProductWithCategoryType } from "@/types";
+import { DetailProductType } from "@/types";
 const Products = async ({ title, query }: { title: string; query: string }) => {
   const data = await getProducts(query);
   console.log("data ", data);
-  const products: ProductWithCategoryType[] = data.data;
+  const products: DetailProductType[] = data.data;
   if (products?.length <= 0) return <div>No Products Found </div>;
   return (
     <div className="my-5">
