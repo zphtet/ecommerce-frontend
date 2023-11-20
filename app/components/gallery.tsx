@@ -20,7 +20,7 @@ const Gallery = ({
             <Tab.Panel
               key={imgUrl}
               className={`relative sm:h-[min(50vh,400px)] h-[min(40vh,300px)] ${
-                preview && "sm:h-[min(30vh,300px)] h-[min(30vh,300px)] "
+                preview && "sm:h-[min(28vh,220px)] h-[min(25vh,200px)]"
               }`}
             >
               <Image

@@ -15,12 +15,7 @@ const ProductDetail = async ({ params }: { params: { productid: string } }) => {
           <Gallery images={product.images} productName={product.name} />
         </div>
         <div className=" flex-1">
-          <ProductInfo
-            name={product.name}
-            price={product.price}
-            size={product.size.value}
-            color={product.color.value}
-          />
+          <ProductInfo data={product} />
         </div>
       </div>
 

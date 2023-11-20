@@ -58,3 +58,12 @@ export type DetailProductType = ProductType & {
   size: Size;
   color: Color;
 };
+
+export type CartItemType = {
+  id: string;
+  imgUrl: string;
+  color: string;
+  size: string;
+  name: string;
+  price: string;
+};
