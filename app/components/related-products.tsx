@@ -1,5 +1,5 @@
 import getProducts from "@/actions/get-products";
-import { ProductWithCategoryType } from "@/types";
+import { DetailProductType } from "@/types";
 import ProductCard from "./product-card";
 
 const RelatedProducts = async ({
@@ -12,7 +12,7 @@ const RelatedProducts = async ({
   const data = await getProducts(
     `category=true&categoryId=${categoryId}&limit=5`
   );
-  const products: ProductWithCategoryType[] = data.data;
+  const products: DetailProductType[] = data.data;
 
   const filteredProducts = products.filter(
     (product) => product.id !== currentId
