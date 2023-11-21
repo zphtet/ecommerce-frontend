@@ -16,7 +16,7 @@ const CategoryPage = async ({ params }: { params: { categoryid: string } }) => {
       <Suspense>
         <Products
           title={`${category.name} `}
-          query={`category=true&categoryId=${category.id}`}
+          query={`category=true&categoryId=${category.id}&color=true&size=true`}
         />
       </Suspense>
     </div>

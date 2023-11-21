@@ -13,6 +13,7 @@ const ProductCard = ({ data }: { data: DetailProductType }) => {
   const [open, setOpen] = useState(false);
   const { addToCart, cart } = useCartStore((state) => state);
   const [mounted, setIsMounted] = useState(false);
+  console.log(data, "product card");
   const cartItem = {
     id: data.id,
     name: data.name,
