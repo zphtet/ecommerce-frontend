@@ -12,6 +12,15 @@ const nextConfig = {
       },
     ],
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/api/checkout",
+        destination: "http://localhost:3001/api/checkout",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

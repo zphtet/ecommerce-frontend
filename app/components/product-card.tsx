@@ -5,7 +5,7 @@ import { ShoppingCart, View } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import PreviewDialog from "./preview-dialog";
-import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import useCartStore from "@/store/cart";
 import toast from "react-hot-toast";
 const ProductCard = ({ data }: { data: DetailProductType }) => {
@@ -13,7 +13,6 @@ const ProductCard = ({ data }: { data: DetailProductType }) => {
   const [open, setOpen] = useState(false);
   const { addToCart, cart } = useCartStore((state) => state);
   const [mounted, setIsMounted] = useState(false);
-  console.log(data, "product card");
   const cartItem = {
     id: data.id,
     name: data.name,

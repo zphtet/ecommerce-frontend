@@ -10,7 +10,7 @@ const CartPage = () => {
         <div className="flex-1 py-3">
           <ShopItems />
         </div>
-        <div className="md:basis-[300px] py-5 px-5 bg-slate-100 rounded-md">
+        <div className="md:basis-[300px] md:self-start self-stretch py-5 px-5 bg-slate-100 rounded-md">
           <OrderSummary />
         </div>
       </div>
