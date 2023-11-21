@@ -1,15 +1,17 @@
 "use client";
 import { formatCurrency } from "@/lib/utlis";
 import useCartStore from "@/store/cart";
-
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 const OrderSummary = () => {
   const { cart } = useCartStore((state) => state);
+  const router = useRouter();
+  const [checking, setChecking] = useState(false);
   const totalPrice = cart.reduce((accum, item) => {
     return accum + Number(item.price);
   }, 0);
   const checkoutHandler = async () => {
-    // alert("hello ");
-    console.log(process.env.NEXT_PUBLIC_CHECKOUT_URL);
+    setChecking(true);
     const res = await fetch(`${process.env.NEXT_PUBLIC_CHECKOUT_URL}`, {
       method: "POST",
       headers: {
@@ -20,6 +22,7 @@ const OrderSummary = () => {
     const data = await res.json();
     console.log(data, "returned from checkout");
     console.log("Post successful");
+    router.replace(data.url);
   };
   const isEmpty = cart.length === 0;
   return (
@@ -33,12 +36,12 @@ const OrderSummary = () => {
       <div className="py-5">
         <button
           onClick={checkoutHandler}
-          disabled={isEmpty}
+          disabled={isEmpty || checking}
           className={`text-sm w-full py-2 rounded-3xl bg-black text-white  ${
-            isEmpty && "opacity-50"
+            (isEmpty || checking) && "opacity-50"
           }`}
         >
-          Check Out
+          {checking ? "Checking Out.." : "Check Out"}
         </button>
       </div>
     </>
