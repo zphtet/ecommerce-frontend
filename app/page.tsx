@@ -1,13 +1,15 @@
 import { Suspense } from "react";
 import Billboard from "./components/billboard";
 import Products from "./components/products";
+import BillboardSkeleton from "./components/billboard-skeleton";
+import LoadingSpinner from "./components/loading-spinner";
 export default async function Home() {
   return (
     <div>
-      <Suspense fallback={<div>Loading billboard ...</div>}>
-        <Billboard billboardId="65599c52649ee1d7be97c612" />
+      <Suspense fallback={<BillboardSkeleton />}>
+        <Billboard billboardId="655f781940a7d78752343549" />
       </Suspense>
-      <Suspense fallback={<div>Loading featured products ....</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Products
           title="Featured Products"
           query="featured=true&category=true&color=true&size=true"

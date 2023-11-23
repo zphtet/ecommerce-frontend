@@ -16,8 +16,9 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/checkout",
-        destination: "http://localhost:3001/api/checkout",
+        source: "/api/store/6552db755c78718103eacc77/checkout",
+        destination:
+          "https://ecommerce-cms-one.vercel.app/api/store/6552db755c78718103eacc77/checkout",
       },
     ];
   },

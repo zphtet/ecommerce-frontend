@@ -1,11 +1,6 @@
 const url = process.env.BACKEND_URL;
 const getBillboard = async (id: string) => {
   try {
-    await new Promise((res) => {
-      setTimeout(() => {
-        res("data");
-      }, 300);
-    });
     const res = await fetch(`${url}/billboards/${id}`, {
       method: "GET",
       next: { revalidate: 60 },

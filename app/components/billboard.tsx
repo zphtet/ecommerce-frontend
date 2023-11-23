@@ -13,7 +13,7 @@ const Billboard = async ({ billboardId }: { billboardId: string }) => {
         className="object-cover"
         fill
       />
-      <div className="absolute z-10 invert text-4xl top-1/2 text-center  -translate-y-1/2  w-full ">
+      <div className="absolute z-10 invert sm:text-4xl text-2xl top-1/2 text-center  -translate-y-1/2  w-full ">
         <h5>{data.label}</h5>
       </div>
     </div>

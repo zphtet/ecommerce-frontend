@@ -20,8 +20,7 @@ const OrderSummary = () => {
       body: JSON.stringify(cart),
     });
     const data = await res.json();
-    console.log(data, "returned from checkout");
-    console.log("Post successful");
+
     router.replace(data.url);
   };
   const isEmpty = cart.length === 0;

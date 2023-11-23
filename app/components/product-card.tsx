@@ -47,7 +47,7 @@ const ProductCard = ({ data }: { data: DetailProductType }) => {
   return (
     <div
       onClick={() => router.push(`/product/${data.id}`)}
-      className=" border-2 p-[5px] cursor-pointer rounded space-y-3 shadow product-card"
+      className=" border-2 p-[10px] cursor-pointer rounded space-y-3 shadow product-card"
     >
       <div className="relative w-[100%] h-[200px]">
         <Image

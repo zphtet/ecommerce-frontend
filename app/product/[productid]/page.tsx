@@ -4,6 +4,7 @@ import Gallery from "@/app/components/gallery";
 import ProductInfo from "@/app/components/product-info";
 import { Suspense } from "react";
 import RelatedProducts from "@/app/components/related-products";
+import LoadingSpinner from "@/app/components/loading-spinner";
 const ProductDetail = async ({ params }: { params: { productid: string } }) => {
   const data = await getProduct(params.productid, "size=true&color=true");
   const product: DetailProductType = data.data;
@@ -23,7 +24,7 @@ const ProductDetail = async ({ params }: { params: { productid: string } }) => {
 
       <p className="font-bold text-xl">Related Products</p>
       <hr className="my-2" />
-      <Suspense fallback={<div>Loading related products ... </div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <RelatedProducts
           categoryId={product.categoryId}
           currentId={product.id}
