@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Store
 
-## Getting Started
+### Nextjs | Typescript
 
-First, run the development server:
+## Tech Stack
+
+Technologies used in the project:
+
+- [NextJS - 14](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Shadcnui](https://ui.shadcn.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+
+## About the project
+
+This is the forntend store project that cousumed data form my ecommerce CMS project store .
+
+You can see all the created colors , sizes , products etc ...
+
+Any **CMS updated datas** are reflected on this frontend.
+
+You can play around the demo . [live demo](https://ecommerce-frontend-omega-ten.vercel.app/)
+
+## Installation
+
+Install my-project with npm
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  npm install my-project
+  cd my-project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+ .env
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+BACKEND_URL=
+NEXT_PUBLIC_CHECKOUT_URL=
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![App ScreenSHot](https://gmcbpoevhicvdrpjtdpc.supabase.co/storage/v1/object/public/ecommerce/ecommerce-frontend.png)
 
-## Deploy on Vercel
+--
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![App Screenshot](https://gmcbpoevhicvdrpjtdpc.supabase.co/storage/v1/object/public/ecommerce/pre.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+--
+
+![App Screenshot](https://gmcbpoevhicvdrpjtdpc.supabase.co/storage/v1/object/public/ecommerce/checkout.png)
+
+## Demo
+
+You can play around the demos
+
+[Live Demo CMS](https://ecommerce-cms-one.vercel.app/)
+
+[Live Demo Frontend](https://ecommerce-frontend-omega-ten.vercel.app/)
